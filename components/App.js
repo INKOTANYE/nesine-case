@@ -1,6 +1,6 @@
 import React from 'react';
 import '../style/main.scss';
-import Container from './Container.js';
+import Container from './Container';
 import { CartProvider } from './content/CartContext';
 import { BultenProvider } from './content/BultenContext';
 

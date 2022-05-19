@@ -1,5 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
-import data from './data/bulten_data.json';
+import React, { createContext, useState } from 'react';
 
 const BultenContext = createContext(null);
 

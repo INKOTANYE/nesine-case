@@ -12,10 +12,6 @@ function Table() {
     window.addEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    sessionStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
-
   const handleScroll = () => {
     const userScrollHeight = window.innerHeight + window.scrollY;
     const windowBottomHeight = document.documentElement.offsetHeight;
@@ -36,7 +32,7 @@ function Table() {
 
   const addCart = (price, e, uniqueId, mac, code, mbs) => {
     const item = {
-      id: uniqueId,
+      id:uniqueId,
       code,
       mbs,
       mac,
@@ -60,6 +56,7 @@ function Table() {
             <th className="mac">
               {' '}
               Event Count
+              {' '}
               {bulten.length}
             </th>
             <th className="cell"> MBS</th>

@@ -4,7 +4,6 @@ import CartContext from './content/CartContext';
 function Cart() {
   const { cart } = useContext(CartContext);
   const [total, setTotal] = useState(0);
-  const [sessionCart, setSessionCart] = useState([]);
 
   useEffect(() => {
     const totalPrice = cart.map((q) => q.price);
@@ -13,9 +12,6 @@ function Cart() {
       sum += +totalPrice[i];
     }
     setTotal(sum);
-    sessionStorage.cart = JSON.stringify(cart);
-    const newCart = JSON.parse(sessionStorage.cart);
-    setSessionCart(newCart);
   }, [cart]);
 
   return (
@@ -25,27 +21,39 @@ function Cart() {
         {total.toFixed(2)}
       </span>
       {
-            sessionCart.map((item, index) => (
+            cart.map((item, index) => (
               <div key={index} className="cart-detail">
                 <span>
                   {' '}
-                  Kod:
+                  {' '}
+                  Kod :
+                  {' '}
                   {item.code}
+                  {' '}
                 </span>
                 <span>
+                  {' '}
                   {' '}
                   Maç :
+                  {' '}
                   {item.mac}
+                  {' '}
                 </span>
                 <span>
+                  {' '}
                   {' '}
                   Oran :
+                  {' '}
                   {item.price}
+                  {' '}
                 </span>
                 <span>
                   {' '}
+                  {' '}
                   Mbs :
+                  {' '}
                   {item.mbs}
+                  {' '}
                 </span>
               </div>
             ))

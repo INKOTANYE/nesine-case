@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from 'react';
 import data from './content/data/bulten_data.json';
 import BultenContext from './content/BultenContext';
-import Table from './Table.js';
-import Cart from './Cart.js';
+import Table from './Table';
+import Cart from './Cart';
 import '../style/loader.scss';
 
 function Container() {
@@ -28,12 +28,13 @@ function Container() {
         cifteSansX2: data.Events[i].OCG[2].OC[5].O,
       });
     }
-    setBulten(tableArr);
+    return tableArr
   };
 
   useEffect(() => {
-    getData();
-  }, [data]);
+    const tableArr = getData();
+    setBulten(tableArr);
+  }, []);
 
   if (bulten == false) {
     return (

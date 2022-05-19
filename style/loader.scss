@@ -1,0 +1,69 @@
+
+$colors--3: [#8360c3, #7274b9, #6087af, #4e9aa4, #40ac9c, #2ebf91];
+
+$white: #fff;
+
+body {
+  margin: 0;
+}
+.preloaders {
+  width: 100% !important;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.loader-wrapper {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  width: 100% !important;
+  min-width: 300px;
+  min-height: 300px;
+  display: block;
+  z-index: 30000;
+  border: 2px solid $white;
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    margin-left: 10%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  & {
+    background: #eee;
+    .loader {
+      .square {
+        width: 30px;
+        height: 30px;
+        background: #eee;
+        display: inline-block;
+        animation: wave 2s infinite;
+        margin: 2px;
+
+        @for $i from 1 through length($colors--3) {
+          &:nth-child(#{length($colors--3)}n + #{$i}) {
+            background: nth($colors--3, $i);
+            animation-delay: 0.2s * $i;
+          }
+        }
+      }
+    }
+  }
+}
+
+  @keyframes wave {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      opacity: 0.3;
+      transform: translate(-2px, 0px);
+    }
+    100% {
+      transform: translate(0, 0px);
+    }
+  }
+  

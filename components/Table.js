@@ -130,7 +130,7 @@ function Table() {
               <td> - </td>
 
               <td onClick={(e) => handleCart(item.cifteSans1X, e, item)}>{item.cifteSans1X}</td>
-              <td onClick={(e) => handleCart(item.cifteSans12, e, item.id)}>{item.cifteSans12}</td>
+              <td onClick={(e) => handleCart(item.cifteSans12, e, item)}>{item.cifteSans12}</td>
               <td onClick={(e) => handleCart(item.cifteSansX2, e, item)}>{item.cifteSansX2}</td>
 
               <td> - </td>
